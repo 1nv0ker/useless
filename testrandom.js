@@ -18,7 +18,7 @@ function up() {
     	y : 0,
     	x1 : 600,
     	y1 : 0
-    }
+    }//平行线点坐标
     var line1 = {
     	x : 0,
     	y : 100,
@@ -60,8 +60,8 @@ function up() {
 		var x = getRandomInt(0, 600);
 
     	var y = getRandomInt(0, 600);
-		ab = drawRandomLine(context, x, y);
-		xiangjiao(ab, line);
+		ab = drawRandomLine(context, x, y);//生成随机直线
+		xiangjiao(ab, line);//判断是否相交
 		xiangjiao(ab, line1);
 		xiangjiao(ab, line2);
 		xiangjiao(ab, line3);
@@ -89,9 +89,9 @@ function drawRandomLine(cxt, x, y) {
 	cxt.beginPath();
 	cxt.moveTo(x, y);
 	var t = getRandomInt(0, 360);
-	var x1 = randomX(x, t);
+	var x1 = randomX(x, t);//随机x坐标
 	// console.log(y1);
-	var y1=  randomY(y, t);
+	var y1=  randomY(y, t);//随机y坐标
 
 	cxt.lineTo(x1, y1);
 	// console.log(x, y, x1, y1, t);
@@ -118,7 +118,7 @@ function drawLine(cxt) {
 }
 function getRandomInt(min, max) {
   var num = Math.round(Math.random()*(max-min)+min);
-  return num; //The maximum is exclusive and the minimum is inclusive
+  return num; //生成随机坐标
 }
 function randomX(x, t) {
 	var x1 = x+Math.round(50*Math.sin(t*2*Math.PI/360));
