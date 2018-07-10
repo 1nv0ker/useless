@@ -113,6 +113,7 @@ function drawLine(cxt) {
 		cxt.moveTo(0, j*i);
 		cxt.lineTo(600, j*i);
 	}
+	cxt.strokeStyle = "green";
 	cxt.stroke();
 	cxt.closePath();
 }
